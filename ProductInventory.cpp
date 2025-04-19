@@ -3,11 +3,13 @@
 #include <map>
 
 #include "ProductInventory.h"
+#include "Menu.h"
+#include "ProductFileHandler.h"
 
 ProductInventory::ProductInventory() {} // Initialize empty inventory
 
 int ProductInventory::findProductfrequency(std::string productName){ // Function to find the frequency of a specific product in the inventory
-    if (productInventory.find(productName) != productInventory.end()) { // If product found in inventory
+    if (productInventory.find(productName) != productInventory.end()) { // If product exists
         return productInventory[productName]; // return that product's frequency
     } else {
         return 0; // Exit function if not found
@@ -30,9 +32,13 @@ bool ProductInventory::checkForProduct(std::string productName) { // Function to
 }
 
 void ProductInventory::addProduct(std::string productName) {// Function to add a new product to the inventory or increment an existing one
+    productName = lowercaseInput(productName); // Convert product name to lowercase
+    
     if (this -> checkForProduct(productName)) { // if product exists in inventory
         productInventory[productName]++; // increment the quantity of that product
     } else {
         productInventory[productName] = 1; // Add new product with quantity of 1
     }
+
 }
+

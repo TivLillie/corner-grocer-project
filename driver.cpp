@@ -18,9 +18,8 @@ int main () {
     // Set file name
     fileHandler.setFileName(fileName);
 
-    // Read in file
+    // Read in file, put in map
     fileHandler.readFile(fileName, inventory);
-    
     
 
     // Main loop
@@ -30,7 +29,7 @@ int main () {
 
         userInput = menu.getUserInput(userInput); // Get input
 
-        menu.processUserInput(userInput); // Process input
+        menu.processUserInput(userInput, inventory); // Process input
 
     }
 

@@ -4,6 +4,10 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include "ProductInventory.h"
+
+std::string lowercaseInput(std::string input); // Function to convert input to lowercase,
+                                             // This is used by classes other than just Menu
 
 class Menu{
 private:
@@ -14,6 +18,9 @@ public:
 
     void displayMenu() const; // Function to display menu
 
-    int getUserInput(int userInput);
+    int getUserInput(int userInput); // function to get user input
+
+    void processUserInput(int userInput, ProductInventory& inventory); // Function to process user input
+
 };
 #endif 
