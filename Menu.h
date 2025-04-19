@@ -10,7 +10,7 @@ private:
     std::vector<std::string> menuOptions; // Vector of menu options
 
 public:
-    Menu(const std::vector<std::string>& menuOptions); // Constructor
+    Menu(); // Constructor
 
     void displayMenu() const; // Function to display menu
 

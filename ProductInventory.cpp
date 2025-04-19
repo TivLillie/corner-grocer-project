@@ -1,0 +1,33 @@
+#include <iostream>
+#include <string>
+#include <map>
+
+#include "ProductInventory.h"
+
+ProductInventory::ProductInventory() {} // Initialize empty inventory
+
+int ProductInventory::findProductfrequency(std::string productName){ // Function to find the frequency of a specific product in the inventory
+    if (productInventory.find(productName) != productInventory.end()) { // If product found in inventory
+        return productInventory[productName]; // return that product's frequency
+    } else {
+        return 0; // Exit function if not found
+    }
+}
+
+void ProductInventory::printAllFrequency() { // Function to print all of the product and counts from the inventory
+    for (const std::pair<std::string, int>& product : productInventory) { // Loop through each product in the inventory
+        std::cout << product.first << ": " << product.second << std::endl; // Print each product quantity pair
+    }
+}
+
+bool ProductInventory::checkForProduct(std::string productName) { // Function to check if an product exists in the inventory
+    return productInventory.find(productName) != productInventory.end();
+}
+
+void ProductInventory::addProduct(std::string productName) {// Function to add a new product to the inventory or increment an existing one
+    if (this -> checkForProduct(productName)) { // if product exists in inventory
+        productInventory[productName]++; // increment the quantity of that product
+    } else {
+        productInventory[productName] = 1; // Add new product with quantity of 1
+    }
+}

@@ -4,7 +4,7 @@
 
 #include "Menu.h"
 
-Menu::Menu(const std::vector<std::string>& menuOptions) : menuOptions(menuOptions) { // Constructor
+Menu::Menu() : menuOptions(menuOptions) { // Constructor
 }
 
 void Menu::displayMenu() const { // Function to display menu
