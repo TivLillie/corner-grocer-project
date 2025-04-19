@@ -8,11 +8,11 @@
 class Menu{
 private:
     std::vector<std::string> menuOptions; // Vector of menu options
-    
-public:
-    Menu(); // Constructor
 
-    void displayMenu();
+public:
+    Menu(const std::vector<std::string>& menuOptions); // Constructor
+
+    void displayMenu() const; // Function to display menu
 
     int getUserInput();
 };
