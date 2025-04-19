@@ -13,20 +13,33 @@ int main () {
     ProductInventory inventory; // Create an inventory
     ProductFileHandler fileHandler; // create a file handler
     std::string fileName = "TestGroceryList.csv"; // File to read from
+    int userInput; // variable to hold user input
 
     // Set file name
     fileHandler.setFileName(fileName);
-    
-
-    menu.displayMenu(); // Display menu
-
-    std::cout << "Attempting to read file..." << std::endl;
 
     // Read in file
     fileHandler.readFile(fileName, inventory);
     
+    
+
+    // Main loop
+    while (true) {
+        // Always display the menu after proccessing user input
+        menu.displayMenu();
+
+        userInput = menu.getUserInput(userInput); // Get input
+
+        menu.processUserInput(userInput); // Process input
+
+    }
+
+    
+    
     // Test, output the inventory map
-    inventory.printAllFrequency();
+    // inventory.printAllFrequency();
+
+
     
 
 

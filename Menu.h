@@ -14,6 +14,6 @@ public:
 
     void displayMenu() const; // Function to display menu
 
-    int getUserInput();
+    int getUserInput(int userInput);
 };
 #endif 
