@@ -3,10 +3,10 @@
 
 #include "Product.h"
 
-Product::Product(std::string name) : name(name) {}; // Product must have a name to be created
+Product::Product(std::string name) { this->name = name; } // Product must have a name to be created
 
 void Product::setName(std::string productName) { // Function to set product name
-    std::string name = productName;
+    this->name = productName;
 }
 
 std::string Product::getName() { // Function to get product name

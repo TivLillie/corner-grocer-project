@@ -14,8 +14,13 @@ int ProductInventory::findProductfrequency(std::string productName){ // Function
     }
 }
 
-void ProductInventory::printAllFrequency() { // Function to print all of the product and counts from the inventory
-    for (const std::pair<std::string, int>& product : productInventory) { // Loop through each product in the inventory
+void ProductInventory::printAllFrequency() const{ // Function to print all of the product and counts from the inventory
+    if (productInventory.empty()) {
+        std::cout << "There are no products to list." << std::endl; // If inventory is empty, print message
+        return; // Exit
+    }
+
+    for (const auto& product : productInventory) { // Loop through each product in the inventory
         std::cout << product.first << ": " << product.second << std::endl; // Print each product quantity pair
     }
 }

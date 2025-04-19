@@ -14,7 +14,7 @@ public:
 
     int findProductfrequency(std::string productName); // Function to find the frequency of a specific product in the inventory
 
-    void printAllFrequency(); // Function to print all of the product and counts from the inventory
+    void printAllFrequency() const; // Function to print all of the product and counts from the inventory
 
     bool checkForProduct(std::string productName); // Function to check if an product exists in the inventory
 
